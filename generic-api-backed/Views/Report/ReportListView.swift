@@ -20,6 +20,7 @@ struct ReportListView: View {
             // Your existing view hierarchy
             NavigationStack {
                 VStack(alignment: .leading) {
+                    
                     HStack {
                         Image(systemName: "moon.stars.fill")
                             .foregroundStyle(.white)
@@ -52,19 +53,20 @@ struct ReportListView: View {
                     } .task {
                         await loadSearchReports()
                     }
-                    .searchable(text: $searchText, prompt: "Search Reports")
+//                    .searchable(text: $searchText, prompt: "Search Reports")
                     .animation(.default)
                     
                     Divider()
                 }
                 .padding()
                 .background(.black)
-//                .preferredColorScheme(.dark)
 //               Shooting stars
-//                ForEach(0..<200) { _ in // Adjust the number of stars as needed
-//                    StarView()
-//                }
             }
+            ForEach(0..<200) { _ in // Adjust the number of stars as needed
+                StarView()
+            }
+            
+            
         }
     }
 
