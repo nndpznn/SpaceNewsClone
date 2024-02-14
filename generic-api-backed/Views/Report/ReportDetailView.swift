@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ReportDetailView: View {
+    @State private var imageSelected = false
+    
     var report: SpaceFlightReport
     
     var body: some View {
@@ -17,6 +19,9 @@ struct ReportDetailView: View {
                 .bold()
             Text(report.title)
                 .italic()
+            
+            Spacer()
+            
             ScrollView {
                 AsyncImage(url: URL(string: report.image_url)) { image in
                     image.resizable()
@@ -25,11 +30,13 @@ struct ReportDetailView: View {
                 }
                 .frame(width: 350, height: 300)
                 .cornerRadius(10)
-                
-                Spacer()
+
+                Text("Published \(report.published_at)")
+                    .italic()
                 Text("\(report.news_site) - \(report.summary)")
                     .padding()
-            }
+            } .animation(.default)
+            
             Link("Read more from \(report.news_site)", destination: URL(string: report.url)!)
                 .frame(width: 300, height: 25)
                 .padding()

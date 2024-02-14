@@ -17,13 +17,13 @@ struct ReportItemView: View {
                 .cornerRadius(20)
                 .foregroundColor(Color(red: 0, green: 0, blue: 0.5))
             
-            HStack(alignment: .top) {
+            HStack(alignment: .center) {
                 AsyncImage(url: URL(string: report.image_url)) { image in
                     image.resizable()
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(width: 50, height: 50)
+                .frame(width: 75, height: 75)
                 .cornerRadius(5.0)
                 
                 VStack(alignment: .leading) {
