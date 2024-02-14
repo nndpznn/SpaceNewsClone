@@ -11,12 +11,11 @@ struct ReportListView: View {
     @State var reports: [SpaceFlightReport] = []
     @State var loading = false
     @State var errorOccurred = false
+    @State private var searchText: String = ""
     
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all) // Black background
-            
-
             
             // Your existing view hierarchy
             NavigationStack {
@@ -28,7 +27,20 @@ struct ReportListView: View {
                             .font(.title)
                             .foregroundStyle(.white)
                             .bold()
+//                        Button("LAUNCH!") {
+//                            Task {
+//                                await loadReports()
+//                            }
+//                        }
+//                        .frame(width: 100, height: 15)
+//                        .padding()
+//                        .background(Color(red: 0, green: 0, blue: 0.5))
+//                        .foregroundStyle(.white)
+//                        .font(.title3)
+//                        .bold()
+//                        .clipShape(Capsule())
                     }
+
                     ScrollView {
                         ForEach(reports) { report in
                             NavigationLink {
@@ -38,20 +50,24 @@ struct ReportListView: View {
                             }
                         }
                     } .task {
-                        await loadReports()
-                    } .animation(.smooth)
+                        await loadSearchReports()
+                    }
+                    .searchable(text: $searchText, prompt: "Search Reports")
+                    .animation(.default)
                     
                     Divider()
                 }
                 .padding()
-                .preferredColorScheme(.dark)
-                // Shooting stars
-                ForEach(0..<200) { _ in // Adjust the number of stars as needed
-                    StarView()
-                }
+                .background(.black)
+//                .preferredColorScheme(.dark)
+//               Shooting stars
+//                ForEach(0..<200) { _ in // Adjust the number of stars as needed
+//                    StarView()
+//                }
             }
         }
     }
+
     
     func loadReports() async {
         errorOccurred = false
@@ -59,6 +75,20 @@ struct ReportListView: View {
         
         do {
             let loadedReports = try await getReports()
+            loading = false
+            reports = loadedReports.results
+        } catch {
+            errorOccurred = true
+        }
+        loading = false
+    }
+    
+    func loadSearchReports() async {
+        errorOccurred = false
+        loading = true
+        
+        do {
+            let loadedReports = try await getReportsSearch(query: searchText )
             loading = false
             reports = loadedReports.results
         } catch {

@@ -28,6 +28,20 @@ func getReports() async throws -> SpaceFlightAPIPage {
     }
 }
 
+func getReportsSearch(query: String) async throws -> SpaceFlightAPIPage {
+    let queryString: String = "\(SPACEFLIGHT_ENDPOINT)?search=\(query)"
+    guard let url = URL(string: queryString) else {
+        fatalError("Should never happen, but just in case…URL didn’t work 😔")
+    }
+
+    let (data, _) = try await URLSession.shared.data(from: url)
+    if let decodedReports = try? JSONDecoder().decode(SpaceFlightAPIPage.self, from: data) {
+        return decodedReports
+    } else {
+        throw SpaceFlightAPIError.reportNotFound
+    }
+}
+
 func getReportCount() async throws -> Int {
     guard let url = URL(string: SPACEFLIGHT_ENDPOINT) else {
         fatalError("Should never happen, but just in case…URL didn’t work 😔")

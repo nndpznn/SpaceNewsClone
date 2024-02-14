@@ -3,6 +3,8 @@ Ever wish you were always up-to-date space news? Now, with our app, you can expe
 
 Developed by Nolan Nguyen and Matthew Savitt.
 
+Credit to ChatGPT for enabling Matt's idea of creating a shooting star background for both of our lists.
+
 ## About the API
 * This API provides articles and associated images for relevant space news, as well as official status reports from the International Space Station.
 

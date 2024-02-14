@@ -35,7 +35,8 @@ struct ArticleDetailView: View {
                     .italic()
                 Text("\(article.news_site) - \(article.summary)")
                     .padding()
-            } .animation(.default)
+            } 
+//            .animation(.default)
             
             Link("Read more from \(article.news_site)", destination: URL(string: article.url)!)
                 .frame(width: 300, height: 25)

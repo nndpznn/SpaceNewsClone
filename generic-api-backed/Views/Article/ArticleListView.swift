@@ -23,10 +23,22 @@ struct ArticleListView: View {
                         HStack {
                             Image(systemName: "moon.stars.fill")
                                 .foregroundStyle(.white)
-                            Text("Recent Articles")
+                            Text("New Articles")
                                 .font(.title)
                                 .foregroundStyle(.white)
                             .bold()
+//                            Button("LAUNCH!") {
+//                                Task {
+//                                    await loadArticles()
+//                                }
+//                            }
+//                            .frame(width: 100, height: 15)
+//                            .padding()
+//                            .background(Color(red: 0, green: 0, blue: 0.5))
+//                            .foregroundStyle(.white)
+//                            .font(.title3)
+//                            .bold()
+//                            .clipShape(Capsule())
                         }
                         ScrollView {
                             ForEach(articles) { article in
@@ -36,15 +48,15 @@ struct ArticleListView: View {
                                     ArticleItemView(article: article)
                                 }
                             }
-                        }
-                        .task {
+                        } .task {
                             await loadArticles()
-                        } 
+                        }
                         Divider()
-                    } .animation(.smooth)
+                    } 
+                    .animation(.default)
                     
                     .padding()
-                    .background(Color.gray)
+                    .background(.black)
                 }
 //        }
     }
