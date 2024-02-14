@@ -24,7 +24,7 @@ struct ReportItemView: View {
                     ProgressView()
                 }
                 .frame(width: 75, height: 75)
-                .cornerRadius(5.0)
+                .cornerRadius(15)
                 
                 VStack(alignment: .leading) {
                     Text(report.title)

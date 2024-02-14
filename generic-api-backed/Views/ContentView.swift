@@ -19,9 +19,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Articles", systemImage: "doc.append")
                 }
-//                .onTapGesture {
-//                    .animation(.default)
-//                }
+
         }
     }
 }
