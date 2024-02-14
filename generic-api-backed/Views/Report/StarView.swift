@@ -21,7 +21,7 @@ struct StarView: View {
     var body: some View {
         Circle()
             .fill(Color.white)
-            .frame(width: 2, he
+            .frame(width: 2, height: 2)
             .position(position)
             .opacity(0) // Start fully transparent
             .animation(Animation.easeInOut(duration: animationDuration).delay(delay).repeatForever(autoreverses: true), value: position)
