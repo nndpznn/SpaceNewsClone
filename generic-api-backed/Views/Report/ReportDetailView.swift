@@ -46,6 +46,7 @@ struct ReportDetailView: View {
                 .bold()
                 .clipShape(Capsule())
         }
+        .background(Color(red: 0.93, green: 0.93, blue: 0.93))
         Divider()
     }
 }
