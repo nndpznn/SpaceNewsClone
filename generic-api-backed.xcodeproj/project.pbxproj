@@ -14,6 +14,15 @@
 		EF36AD352B74205800438A72 /* generic_api_backedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36AD342B74205800438A72 /* generic_api_backedTests.swift */; };
 		EF36AD3F2B74205800438A72 /* generic_api_backedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36AD3E2B74205800438A72 /* generic_api_backedUITests.swift */; };
 		EF36AD412B74205800438A72 /* generic_api_backedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36AD402B74205800438A72 /* generic_api_backedUITestsLaunchTests.swift */; };
+		EF4579242B7AB7BB00CABE3D /* OurAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4579232B7AB7BB00CABE3D /* OurAPI.swift */; };
+		EF7C5E372B7AFEFB0053B85B /* SpaceFlightReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C5E362B7AFEFB0053B85B /* SpaceFlightReport.swift */; };
+		EF7C5E392B7B24210053B85B /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C5E382B7B24210053B85B /* ReportDetailView.swift */; };
+		EF7C5E3D2B7BDB350053B85B /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C5E3C2B7BDB350053B85B /* ReportListView.swift */; };
+		EF7C5E412B7BE4080053B85B /* ReportItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C5E402B7BE4080053B85B /* ReportItemView.swift */; };
+		EFBA7DDA2B7C2CF4009F7DBA /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA7DD92B7C2CF4009F7DBA /* ArticleListView.swift */; };
+		EFBA7DDE2B7C2F80009F7DBA /* SpaceFlightArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA7DDD2B7C2F80009F7DBA /* SpaceFlightArticle.swift */; };
+		EFBA7DE22B7C2FEC009F7DBA /* ArticleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA7DE12B7C2FEC009F7DBA /* ArticleItemView.swift */; };
+		EFBA7DE42B7C2FF6009F7DBA /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBA7DE32B7C2FF6009F7DBA /* ArticleDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,15 @@
 		EF36AD3A2B74205800438A72 /* generic-api-backedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "generic-api-backedUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF36AD3E2B74205800438A72 /* generic_api_backedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generic_api_backedUITests.swift; sourceTree = "<group>"; };
 		EF36AD402B74205800438A72 /* generic_api_backedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generic_api_backedUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF4579232B7AB7BB00CABE3D /* OurAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurAPI.swift; sourceTree = "<group>"; };
+		EF7C5E362B7AFEFB0053B85B /* SpaceFlightReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceFlightReport.swift; sourceTree = "<group>"; };
+		EF7C5E382B7B24210053B85B /* ReportDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
+		EF7C5E3C2B7BDB350053B85B /* ReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListView.swift; sourceTree = "<group>"; };
+		EF7C5E402B7BE4080053B85B /* ReportItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportItemView.swift; sourceTree = "<group>"; };
+		EFBA7DD92B7C2CF4009F7DBA /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		EFBA7DDD2B7C2F80009F7DBA /* SpaceFlightArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceFlightArticle.swift; sourceTree = "<group>"; };
+		EFBA7DE12B7C2FEC009F7DBA /* ArticleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItemView.swift; sourceTree = "<group>"; };
+		EFBA7DE32B7C2FF6009F7DBA /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				EF36AD232B74205700438A72 /* generic_api_backedApp.swift */,
-				EF36AD252B74205700438A72 /* ContentView.swift */,
+				EF4579282B7AB82400CABE3D /* APIs */,
+				EF4579272B7AB81B00CABE3D /* Models */,
+				EF4579252B7AB7FB00CABE3D /* Views */,
 				EF36AD272B74205800438A72 /* Assets.xcassets */,
 				EF36AD292B74205800438A72 /* Preview Content */,
 			);
@@ -125,6 +145,53 @@
 				EF36AD402B74205800438A72 /* generic_api_backedUITestsLaunchTests.swift */,
 			);
 			path = "generic-api-backedUITests";
+			sourceTree = "<group>";
+		};
+		EF4579252B7AB7FB00CABE3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFBA7DE02B7C2FC8009F7DBA /* Report */,
+				EFBA7DDF2B7C2FC3009F7DBA /* Article */,
+				EF36AD252B74205700438A72 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF4579272B7AB81B00CABE3D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C5E362B7AFEFB0053B85B /* SpaceFlightReport.swift */,
+				EFBA7DDD2B7C2F80009F7DBA /* SpaceFlightArticle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF4579282B7AB82400CABE3D /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				EF4579232B7AB7BB00CABE3D /* OurAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		EFBA7DDF2B7C2FC3009F7DBA /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				EFBA7DD92B7C2CF4009F7DBA /* ArticleListView.swift */,
+				EFBA7DE12B7C2FEC009F7DBA /* ArticleItemView.swift */,
+				EFBA7DE32B7C2FF6009F7DBA /* ArticleDetailView.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		EFBA7DE02B7C2FC8009F7DBA /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C5E3C2B7BDB350053B85B /* ReportListView.swift */,
+				EF7C5E402B7BE4080053B85B /* ReportItemView.swift */,
+				EF7C5E382B7B24210053B85B /* ReportDetailView.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +324,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF7C5E412B7BE4080053B85B /* ReportItemView.swift in Sources */,
+				EFBA7DE42B7C2FF6009F7DBA /* ArticleDetailView.swift in Sources */,
+				EF7C5E372B7AFEFB0053B85B /* SpaceFlightReport.swift in Sources */,
+				EFBA7DE22B7C2FEC009F7DBA /* ArticleItemView.swift in Sources */,
 				EF36AD262B74205700438A72 /* ContentView.swift in Sources */,
+				EF7C5E392B7B24210053B85B /* ReportDetailView.swift in Sources */,
+				EFBA7DDE2B7C2F80009F7DBA /* SpaceFlightArticle.swift in Sources */,
 				EF36AD242B74205700438A72 /* generic_api_backedApp.swift in Sources */,
+				EF7C5E3D2B7BDB350053B85B /* ReportListView.swift in Sources */,
+				EFBA7DDA2B7C2CF4009F7DBA /* ArticleListView.swift in Sources */,
+				EF4579242B7AB7BB00CABE3D /* OurAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
