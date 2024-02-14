@@ -13,39 +13,44 @@ struct ReportListView: View {
     @State var errorOccurred = false
     
     var body: some View {
-//        if loading {
-//            ProgressView()
-//        } else if errorOccurred {
-//            Text("Sorry, something went wrong.")
-//        } else {
-                NavigationStack {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Image(systemName: "moon.stars.fill")
-                                .foregroundStyle(.white)
-                            Text("Latest Reports")
-                                .font(.title)
-                                .foregroundStyle(.white)
-                                .bold()
-                        }
-                        ScrollView {
-                            ForEach(reports) { report in
-                                NavigationLink {
-                                    ReportDetailView(report: report)
-                                } label: {
-                                    ReportItemView(report: report)
-                                }
-                            }
-                        } .task {
-                            await loadReports()
-                        } .animation(.smooth)
-                        
-                        Divider()
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all) // Black background
+            
+
+            
+            // Your existing view hierarchy
+            NavigationStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Image(systemName: "moon.stars.fill")
+                            .foregroundStyle(.white)
+                        Text("Latest Reports")
+                            .font(.title)
+                            .foregroundStyle(.white)
+                            .bold()
                     }
-                    .padding()
-                    .background(Color.gray)
+                    ScrollView {
+                        ForEach(reports) { report in
+                            NavigationLink {
+                                ReportDetailView(report: report)
+                            } label: {
+                                ReportItemView(report: report)
+                            }
+                        }
+                    } .task {
+                        await loadReports()
+                    } .animation(.smooth)
+                    
+                    Divider()
                 }
-//        }
+                .padding()
+                .preferredColorScheme(.dark)
+                // Shooting stars
+                ForEach(0..<200) { _ in // Adjust the number of stars as needed
+                    StarView()
+                }
+            }
+        }
     }
     
     func loadReports() async {
@@ -61,8 +66,8 @@ struct ReportListView: View {
         }
         loading = false
     }
-    
 }
+
 
 #Preview {
     ReportListView()

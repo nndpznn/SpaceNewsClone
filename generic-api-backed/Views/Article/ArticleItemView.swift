@@ -3,7 +3,7 @@
 //  generic-api-backed
 //
 //  Created by Nolan Nguyen on 2/13/24.
-//
+//  This models an item in the articles view
 
 import SwiftUI
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC30FF7E2B7C958600A2FEB1 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30FF7D2B7C958600A2FEB1 /* StarView.swift */; };
 		EF36AD242B74205700438A72 /* generic_api_backedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36AD232B74205700438A72 /* generic_api_backedApp.swift */; };
 		EF36AD262B74205700438A72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36AD252B74205700438A72 /* ContentView.swift */; };
 		EF36AD282B74205800438A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF36AD272B74205800438A72 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC30FF7D2B7C958600A2FEB1 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		EF36AD202B74205700438A72 /* generic-api-backed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "generic-api-backed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF36AD232B74205700438A72 /* generic_api_backedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generic_api_backedApp.swift; sourceTree = "<group>"; };
 		EF36AD252B74205700438A72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7C5E3C2B7BDB350053B85B /* ReportListView.swift */,
+				AC30FF7D2B7C958600A2FEB1 /* StarView.swift */,
 				EF7C5E402B7BE4080053B85B /* ReportItemView.swift */,
 				EF7C5E382B7B24210053B85B /* ReportDetailView.swift */,
 			);
@@ -330,6 +333,7 @@
 				EFBA7DE22B7C2FEC009F7DBA /* ArticleItemView.swift in Sources */,
 				EF36AD262B74205700438A72 /* ContentView.swift in Sources */,
 				EF7C5E392B7B24210053B85B /* ReportDetailView.swift in Sources */,
+				AC30FF7E2B7C958600A2FEB1 /* StarView.swift in Sources */,
 				EFBA7DDE2B7C2F80009F7DBA /* SpaceFlightArticle.swift in Sources */,
 				EF36AD242B74205700438A72 /* generic_api_backedApp.swift in Sources */,
 				EF7C5E3D2B7BDB350053B85B /* ReportListView.swift in Sources */,
