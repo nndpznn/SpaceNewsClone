@@ -11,7 +11,7 @@ struct StarView: View {
         let height = UIScreen.main.bounds.height
 
         // Random position for each star
-        position = CGPoint(x: Double.random(in: 0...width), y: Double.random(in: 0...height))
+        position = CGPoint(x: Double.random(in: 0...width), y: Double.random(in: 50...height))
 
         // Randomize animation duration and delay to make each star's animation unique
         animationDuration = Double.random(in: 1...3)

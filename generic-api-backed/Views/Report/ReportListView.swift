@@ -14,16 +14,19 @@ struct ReportListView: View {
     @State private var searchText: String = ""
     
     var body: some View {
-        ZStack {
-            Color.black.edgesIgnoringSafeArea(.all) // Black background
-            
             // Your existing view hierarchy
-            NavigationStack {
+        NavigationStack {
+            ZStack {
+                ForEach(0..<200) { _ in // Adjust the number of stars as needed
+                    StarView()
+                }
+                
                 VStack(alignment: .leading) {
-                    
                     HStack {
+                        
                         Image(systemName: "moon.stars.fill")
                             .foregroundStyle(.white)
+                        
                         Text("Latest Reports")
                             .font(.title)
                             .foregroundStyle(.white)
@@ -41,7 +44,7 @@ struct ReportListView: View {
 //                        .bold()
 //                        .clipShape(Capsule())
                     }
-
+                    
                     ScrollView {
                         ForEach(reports) { report in
                             NavigationLink {
@@ -53,20 +56,15 @@ struct ReportListView: View {
                     } .task {
                         await loadSearchReports()
                     }
-//                    .searchable(text: $searchText, prompt: "Search Reports")
+                    .searchable(text: $searchText, prompt: "Search Reports")
                     .animation(.default)
                     
                     Divider()
                 }
                 .padding()
-                .background(.black)
-//               Shooting stars
+                //               Shooting stars
             }
-            ForEach(0..<200) { _ in // Adjust the number of stars as needed
-                StarView()
-            }
-            
-            
+            .background(.black)
         }
     }
 

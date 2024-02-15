@@ -12,6 +12,7 @@ let SPACEFLIGHT_ENDPOINT = "\(SPACEFLIGHT_ROOT)/reports/"
 
 enum SpaceFlightAPIError: Error {
     case reportNotFound
+    case articleNotFound
     case unexpectedAPIError
 }
 
@@ -58,6 +59,7 @@ func getReportCount() async throws -> Int {
 }
 
 
+
 let ARTICLESPACEFLIGHT_ENDPOINT = "\(SPACEFLIGHT_ROOT)/articles/"
 
 func getArticles() async throws -> SpaceFlightArticleAPIPage {
@@ -69,7 +71,21 @@ func getArticles() async throws -> SpaceFlightArticleAPIPage {
     if let decodedArticles = try? JSONDecoder().decode(SpaceFlightArticleAPIPage.self, from: data) {
         return decodedArticles
     } else {
-        throw SpaceFlightAPIError.reportNotFound
+        throw SpaceFlightAPIError.articleNotFound
+    }
+}
+
+func getArticlesSearch(query: String) async throws -> SpaceFlightArticleAPIPage {
+    let queryString: String = "\(ARTICLESPACEFLIGHT_ENDPOINT)?search=\(query)"
+    guard let url = URL(string: queryString) else {
+        fatalError("Should never happen, but just in case…URL didn’t work 😔")
+    }
+
+    let (data, _) = try await URLSession.shared.data(from: url)
+    if let decodedArticles = try? JSONDecoder().decode(SpaceFlightArticleAPIPage.self, from: data) {
+        return decodedArticles
+    } else {
+        throw SpaceFlightAPIError.articleNotFound
     }
 }
 
