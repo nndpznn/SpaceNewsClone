@@ -56,7 +56,7 @@ struct ReportListView: View {
                     } .task {
                         await loadSearchReports()
                     }
-                    .searchable(text: $searchText, prompt: "Search Reports")
+//                    .searchable(text: $searchText, prompt: "Search Reports")
                     .animation(.default)
                     
                     Divider()
