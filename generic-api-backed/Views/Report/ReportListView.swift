@@ -22,7 +22,6 @@ struct ReportListView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    
                     HStack {
                         
                         Image(systemName: "moon.stars.fill")
@@ -45,11 +44,6 @@ struct ReportListView: View {
                     } .task {
                         await loadSearchReports(text: searchText)
                     }
-//                    .onAppear {
-//                        withAnimation(.easeInOut) {
-//                            // Perform any animations here if needed
-//                        }
-//                    }
                     .animation(.default)
                     Divider()
                 }
@@ -57,11 +51,11 @@ struct ReportListView: View {
             }
             .background(.black)
 //            .navigationTitle("Latest Reports")
-            .searchable(text: $searchText, prompt: "Search Reports")
-            .onChange(of: searchText) {
-                Task {
-                    await loadSearchReports(text: searchText)
-                }
+        }
+        .searchable(text: $searchText, prompt: "Search Reports")
+        .onChange(of: searchText) {
+            Task {
+                await loadSearchReports(text: searchText)
             }
         }
     }

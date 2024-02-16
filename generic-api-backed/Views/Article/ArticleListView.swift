@@ -44,11 +44,6 @@ struct ArticleListView: View {
                     } .task {
                         await loadSearchArticles(text: searchText)
                     }
-//                    .onAppear {
-//                        withAnimation(.easeInOut) {
-//                            // Perform any animations here if needed
-//                        }
-//                    }
                     .animation(.default)
                     Divider()
                 }
@@ -56,15 +51,16 @@ struct ArticleListView: View {
             }
             .background(.black)
 //            .navigationTitle("Trending Articles")
-            .searchable(text: $searchText, prompt: "Search Articles")
-            .onChange(of: searchText) {
-                Task {
-                    await loadSearchArticles(text: searchText)
-                }
+        }
+        .searchable(text: $searchText, prompt: "Search Articles")
+        .onChange(of: searchText) {
+            Task {
+                await loadSearchArticles(text: searchText)
             }
         }
-
     }
+    
+    
     func loadArticles() async {
         errorOccurred = false
         loading = true
