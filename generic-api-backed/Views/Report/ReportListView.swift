@@ -22,6 +22,7 @@ struct ReportListView: View {
                 }
                 
                 VStack(alignment: .leading) {
+                    
                     HStack {
                         
                         Image(systemName: "moon.stars.fill")
@@ -31,18 +32,6 @@ struct ReportListView: View {
                             .font(.title)
                             .foregroundStyle(.white)
                             .bold()
-//                        Button("LAUNCH!") {
-//                            Task {
-//                                await loadReports()
-//                            }
-//                        }
-//                        .frame(width: 100, height: 15)
-//                        .padding()
-//                        .background(Color(red: 0, green: 0, blue: 0.5))
-//                        .foregroundStyle(.white)
-//                        .font(.title3)
-//                        .bold()
-//                        .clipShape(Capsule())
                     }
                     
                     ScrollView {
@@ -54,17 +43,26 @@ struct ReportListView: View {
                             }
                         }
                     } .task {
-                        await loadSearchReports()
+                        await loadSearchReports(text: searchText)
                     }
-//                    .searchable(text: $searchText, prompt: "Search Reports")
+//                    .onAppear {
+//                        withAnimation(.easeInOut) {
+//                            // Perform any animations here if needed
+//                        }
+//                    }
                     .animation(.default)
-                    
                     Divider()
                 }
                 .padding()
-                //               Shooting stars
             }
             .background(.black)
+//            .navigationTitle("Latest Reports")
+            .searchable(text: $searchText, prompt: "Search Reports")
+            .onChange(of: searchText) {
+                Task {
+                    await loadSearchReports(text: searchText)
+                }
+            }
         }
     }
 
@@ -83,12 +81,12 @@ struct ReportListView: View {
         loading = false
     }
     
-    func loadSearchReports() async {
+    func loadSearchReports(text: String) async {
         errorOccurred = false
         loading = true
         
         do {
-            let loadedReports = try await getReportsSearch(query: searchText )
+            let loadedReports = try await getReportsSearch(query: text)
             loading = false
             reports = loadedReports.results
         } catch {

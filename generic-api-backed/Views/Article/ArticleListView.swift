@@ -27,22 +27,10 @@ struct ArticleListView: View {
                         Image(systemName: "moon.stars.fill")
                             .foregroundStyle(.white)
                         
-                        Text("Latest Reports")
+                        Text("Trending Articles")
                             .font(.title)
                             .foregroundStyle(.white)
                             .bold()
-//                        Button("LAUNCH!") {
-//                            Task {
-//                                await loadReports()
-//                            }
-//                        }
-//                        .frame(width: 100, height: 15)
-//                        .padding()
-//                        .background(Color(red: 0, green: 0, blue: 0.5))
-//                        .foregroundStyle(.white)
-//                        .font(.title3)
-//                        .bold()
-//                        .clipShape(Capsule())
                     }
                     
                     ScrollView {
@@ -54,18 +42,28 @@ struct ArticleListView: View {
                             }
                         }
                     } .task {
-                        await loadSearchArticles()
+                        await loadSearchArticles(text: searchText)
                     }
-//                    .searchable(text: $searchText, prompt: "Search Reports")
+//                    .onAppear {
+//                        withAnimation(.easeInOut) {
+//                            // Perform any animations here if needed
+//                        }
+//                    }
                     .animation(.default)
-                    
                     Divider()
                 }
                 .padding()
-                //               Shooting stars
             }
             .background(.black)
+//            .navigationTitle("Trending Articles")
+            .searchable(text: $searchText, prompt: "Search Articles")
+            .onChange(of: searchText) {
+                Task {
+                    await loadSearchArticles(text: searchText)
+                }
+            }
         }
+
     }
     func loadArticles() async {
         errorOccurred = false
@@ -81,12 +79,12 @@ struct ArticleListView: View {
         loading = false
     }
     
-    func loadSearchArticles() async {
+    func loadSearchArticles(text: String) async {
         errorOccurred = false
         loading = true
         
         do {
-            let loadedArticles = try await getArticlesSearch(query: searchText )
+            let loadedArticles = try await getArticlesSearch(query: text )
             loading = false
             articles = loadedArticles.results
         } catch {
