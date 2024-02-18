@@ -1,5 +1,7 @@
 ## About the App
-Ever wish you were always up-to-date space news? Now, with our app, you can expect the latest and greatest news surrounding space, rocket launches, and satellites delivered right to your phone. The app currently offers two tabs: *Reports*, which provides official ISS status reports updated daily, and *Articles*, which covers any other kind of interesting space-related events.
+Ever wish you were always up-to-date on space news? Now, with our app, you can expect the latest and greatest updates surrounding space, rocket launches, and satellites delivered right to your phone. The app currently offers two tabs: *Reports*, which provides official ISS status reports updated daily, and *Articles*, which covers any other kind of interesting space-related events.
+
+The app also features a searchbar to bring up the top 10 most relevant articles to your search, by both article title and summary content. Each article description contains publishing information and a link to the full piece through your browser.
 
 Developed by Nolan Nguyen and Matthew Savitt.
 
