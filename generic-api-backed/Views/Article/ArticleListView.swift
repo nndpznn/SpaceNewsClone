@@ -12,6 +12,7 @@ struct ArticleListView: View {
     @State var loading = false
     @State var errorOccurred = false
     @State private var searchText: String = ""
+    @State var notSearching = true
     
     var body: some View {
             // Your existing view hierarchy
@@ -31,6 +32,10 @@ struct ArticleListView: View {
                             .font(.title)
                             .foregroundStyle(.white)
                             .bold()
+                        
+                        Spacer()
+                        
+                        SearchButton(isSet: $notSearching)
                     }
                     
                     ScrollView {
@@ -45,7 +50,9 @@ struct ArticleListView: View {
                         await loadSearchArticles(text: searchText)
                     }
                     .animation(.default)
-//                    .navigationBarTitle("Latest Reports", displayMode: .inline)
+//                    .animation(.default, value: articles)
+                    .navigationBarTitle("Trending Articles", displayMode: .inline).navigationBarHidden(notSearching)
+
 //                    .background(NavigationConfigurator { nc in
 //                        nc.navigationBar.barTintColor = .blue
 //                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
