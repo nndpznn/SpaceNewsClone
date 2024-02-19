@@ -45,12 +45,20 @@ struct ReportListView: View {
                         await loadSearchReports(text: searchText)
                     }
                     .animation(.default)
+//                    .navigationBarTitle("Latest Reports", displayMode: .inline)
+//                    .background(NavigationConfigurator { nc in
+//                        nc.navigationBar.barTintColor = .blue
+//                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+//                    })
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .navigationBarBackButtonHidden(true)
+                    
                     Divider()
+                    
                 }
                 .padding()
             }
             .background(.black)
-//            .navigationTitle("Latest Reports")
         }
         .searchable(text: $searchText, prompt: "Search Reports")
         .onChange(of: searchText) {
@@ -58,6 +66,7 @@ struct ReportListView: View {
                 await loadSearchReports(text: searchText)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
     

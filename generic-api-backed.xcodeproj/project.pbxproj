@@ -16,6 +16,7 @@
 		EF36AD3F2B74205800438A72 /* generic_api_backedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36AD3E2B74205800438A72 /* generic_api_backedUITests.swift */; };
 		EF36AD412B74205800438A72 /* generic_api_backedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36AD402B74205800438A72 /* generic_api_backedUITestsLaunchTests.swift */; };
 		EF4579242B7AB7BB00CABE3D /* OurAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4579232B7AB7BB00CABE3D /* OurAPI.swift */; };
+		EF5601B12B83CC040008CF63 /* NavConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5601B02B83CC040008CF63 /* NavConfig.swift */; };
 		EF6DDA5D2B7D5A97007C9BAE /* ReportsArticlesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6DDA5C2B7D5A97007C9BAE /* ReportsArticlesHomeView.swift */; };
 		EF6DDA5F2B7D5ACF007C9BAE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6DDA5E2B7D5ACF007C9BAE /* HomeScreenView.swift */; };
 		EF7C5E372B7AFEFB0053B85B /* SpaceFlightReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C5E362B7AFEFB0053B85B /* SpaceFlightReport.swift */; };
@@ -58,6 +59,7 @@
 		EF36AD3E2B74205800438A72 /* generic_api_backedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generic_api_backedUITests.swift; sourceTree = "<group>"; };
 		EF36AD402B74205800438A72 /* generic_api_backedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generic_api_backedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF4579232B7AB7BB00CABE3D /* OurAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurAPI.swift; sourceTree = "<group>"; };
+		EF5601B02B83CC040008CF63 /* NavConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavConfig.swift; path = "generic-api-backed/Views/NavConfig.swift"; sourceTree = SOURCE_ROOT; };
 		EF6DDA5C2B7D5A97007C9BAE /* ReportsArticlesHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsArticlesHomeView.swift; sourceTree = "<group>"; };
 		EF6DDA5E2B7D5ACF007C9BAE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		EF7C5E362B7AFEFB0053B85B /* SpaceFlightReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceFlightReport.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7C5E3C2B7BDB350053B85B /* ReportListView.swift */,
+				EF5601B02B83CC040008CF63 /* NavConfig.swift */,
 				EF7C5E402B7BE4080053B85B /* ReportItemView.swift */,
 				EF7C5E382B7B24210053B85B /* ReportDetailView.swift */,
 			);
@@ -338,6 +341,7 @@
 				EFBA7DE42B7C2FF6009F7DBA /* ArticleDetailView.swift in Sources */,
 				EF7C5E372B7AFEFB0053B85B /* SpaceFlightReport.swift in Sources */,
 				EFBA7DE22B7C2FEC009F7DBA /* ArticleItemView.swift in Sources */,
+				EF5601B12B83CC040008CF63 /* NavConfig.swift in Sources */,
 				EF6DDA5F2B7D5ACF007C9BAE /* HomeScreenView.swift in Sources */,
 				EF36AD262B74205700438A72 /* ContentView.swift in Sources */,
 				EF7C5E392B7B24210053B85B /* ReportDetailView.swift in Sources */,

@@ -45,12 +45,20 @@ struct ArticleListView: View {
                         await loadSearchArticles(text: searchText)
                     }
                     .animation(.default)
+//                    .navigationBarTitle("Latest Reports", displayMode: .inline)
+//                    .background(NavigationConfigurator { nc in
+//                        nc.navigationBar.barTintColor = .blue
+//                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+//                    })
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .navigationBarBackButtonHidden(true)
+                    
                     Divider()
+                    
                 }
                 .padding()
             }
             .background(.black)
-//            .navigationTitle("Trending Articles")
         }
         .searchable(text: $searchText, prompt: "Search Articles")
         .onChange(of: searchText) {
@@ -58,6 +66,7 @@ struct ArticleListView: View {
                 await loadSearchArticles(text: searchText)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     
