@@ -12,10 +12,11 @@ struct ArticleListView: View {
     @State var loading = false
     @State var errorOccurred = false
     @State private var searchText: String = ""
-    @State var notSearching = true
+    @State var notSearching: Bool = true
+    @State var appearing: Bool = false
     
     var body: some View {
-            // Your existing view hierarchy
+
         NavigationStack {
             ZStack {
                 ForEach(0..<200) { _ in // Adjust the number of stars as needed
@@ -37,31 +38,40 @@ struct ArticleListView: View {
                         
                         SearchButton(isSet: $notSearching)
                     }
-                    
-                    ScrollView {
-                        ForEach(articles) { article in
-                            NavigationLink {
-                                ArticleDetailView(article: article)
-                            } label: {
-                                ArticleItemView(article: article)
+                    if articles.count > 0 {
+                        ScrollView {
+                            ForEach(articles) { article in
+                                NavigationLink {
+                                    ArticleDetailView(article: article)
+                                } label: {
+                                    ArticleItemView(article: article)
+                                }
                             }
                         }
-                    } .task {
-                        await loadSearchArticles(text: searchText)
+                        .animation(Animation.bouncy(duration: 1.0), value:articles)
+//                        .animation(Animation.bouncy(duration: 1.0), value: appearing)
+//                        .onAppear() {
+//                            appearing = true
+//                        }
+                        
+                        .navigationBarTitle("Trending Articles", displayMode: .inline).navigationBarHidden(notSearching)
+                    } else {
+                        Divider()
+                        VStack(alignment: .center) {
+                            
+                            Text("Sent our satellites out... couldn't find a thing.")
+                                .foregroundStyle(.white)
+                                .font(.headline)
+                            
+                            Spacer()
+                            
+                            Text("Maybe your answer is in these stars?")
+                                .foregroundStyle(.white)
+                                .font(.headline)
+                        }
                     }
-                    .animation(.default)
-//                    .animation(.default, value: articles)
-                    .navigationBarTitle("Trending Articles", displayMode: .inline).navigationBarHidden(notSearching)
-
-//                    .background(NavigationConfigurator { nc in
-//                        nc.navigationBar.barTintColor = .blue
-//                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-//                    })
-//                    .navigationBarTitleDisplayMode(.inline)
-//                    .navigationBarBackButtonHidden(true)
-                    
-                    Divider()
-                    
+                } .task {
+                    await loadSearchArticles(text: searchText)
                 }
                 .padding()
             }

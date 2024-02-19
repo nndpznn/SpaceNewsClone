@@ -122,9 +122,9 @@
 		EF36AD222B74205700438A72 /* generic-api-backed */ = {
 			isa = PBXGroup;
 			children = (
+				EF4579282B7AB82400CABE3D /* APIs */,
 				EF5601B22B83D6A90008CF63 /* Assets */,
 				EF36AD232B74205700438A72 /* generic_api_backedApp.swift */,
-				EF4579282B7AB82400CABE3D /* APIs */,
 				EF4579272B7AB81B00CABE3D /* Models */,
 				EF4579252B7AB7FB00CABE3D /* Views */,
 				EF36AD272B74205800438A72 /* Assets.xcassets */,
