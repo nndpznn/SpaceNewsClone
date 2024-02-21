@@ -122,9 +122,10 @@
 		EF36AD222B74205700438A72 /* generic-api-backed */ = {
 			isa = PBXGroup;
 			children = (
+				EF36AD232B74205700438A72 /* generic_api_backedApp.swift */,
+				EF36AD252B74205700438A72 /* ContentView.swift */,
 				EF4579282B7AB82400CABE3D /* APIs */,
 				EF5601B22B83D6A90008CF63 /* Assets */,
-				EF36AD232B74205700438A72 /* generic_api_backedApp.swift */,
 				EF4579272B7AB81B00CABE3D /* Models */,
 				EF4579252B7AB7FB00CABE3D /* Views */,
 				EF36AD272B74205800438A72 /* Assets.xcassets */,
@@ -161,9 +162,7 @@
 		EF4579252B7AB7FB00CABE3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EF36AD252B74205700438A72 /* ContentView.swift */,
 				EF6DDA5C2B7D5A97007C9BAE /* ReportsArticlesHomeView.swift */,
-				AC30FF7D2B7C958600A2FEB1 /* StarView.swift */,
 				EFBA7DE02B7C2FC8009F7DBA /* Report */,
 				EFBA7DDF2B7C2FC3009F7DBA /* Article */,
 				EF6DDA5E2B7D5ACF007C9BAE /* HomeScreenView.swift */,
@@ -193,6 +192,7 @@
 			children = (
 				EF5601B02B83CC040008CF63 /* NavConfig.swift */,
 				EF5601B32B83D6C10008CF63 /* SearchButton.swift */,
+				AC30FF7D2B7C958600A2FEB1 /* StarView.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
