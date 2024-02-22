@@ -68,7 +68,7 @@ struct ReportListView: View {
                                     .font(.headline)
                             }
                         }
-                    } .task {
+                    } .task(id:searchText) {
                         await loadSearchReports(text: searchText)
                     }
                     .padding()
@@ -76,11 +76,6 @@ struct ReportListView: View {
                 .background(.black)
             }
             .searchable(text: $searchText, prompt: "Search Reports")
-            .onChange(of: searchText) {
-                Task {
-                    await loadSearchReports(text: searchText)
-                }
-            }
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }

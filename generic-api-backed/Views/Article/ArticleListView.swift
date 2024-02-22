@@ -68,7 +68,7 @@ struct ArticleListView: View {
                                     .font(.headline)
                             }
                         }
-                    } .task {
+                    } .task(id:searchText) {
                         await loadSearchArticles(text: searchText)
                     }
                     .padding()
@@ -76,11 +76,6 @@ struct ArticleListView: View {
                 .background(.black)
             }
             .searchable(text: $searchText, prompt: "Search Articles")
-            .onChange(of: searchText) {
-                Task {
-                    await loadSearchArticles(text: searchText)
-                }
-            }
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
