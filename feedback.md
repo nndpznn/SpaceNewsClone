@@ -19,7 +19,7 @@
 | • Layout and composition | Layout and composition meets criteria. | 8/8 |
 | • Colors and other visuals | Colors and visuals meet criteria. | 4/4 |
 | • Proper choice of input views and controls | Input views and controls meet criteria. | 8/8 |
-| **Implementation specificstions** | | |
+| **Implementation specifications** | | |
 | • Model objects | Models meet criteria. | ✅ |
 | • API requests throughout the life of the app | User input drives API, meets criteria. | ✅ |
 | • Coded-in animations or transitions | Animation meets criteria. | ✅ |
