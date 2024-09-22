@@ -14,3 +14,6 @@ Credit to ChatGPT for helping Matt to create his idea of a shooting star backgro
 * Thanks to [SpaceFlight News](https://spaceflightnewsapi.net/) for the super cool API providing space news.
 * Documentation can be found [here.](https://api.spaceflightnewsapi.net/v4/docs/#/)
 * Thanks to Generrated for our [App Icon](https://generrated.com/prompts/macOSAppIcon)
+
+## Demo Content
+<img width="1001" alt="Screenshot 2024-09-22 at 3 37 19 PM" src="https://github.com/user-attachments/assets/85fa6e7e-d6b6-4f70-937c-1c739ab02532">
