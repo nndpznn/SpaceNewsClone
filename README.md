@@ -1,4 +1,4 @@
-## SpaceNews - Your starside companion.
+## SpaceNews - Your starside informant.
 <img width="1001" alt="Screenshot 2024-09-22 at 3 37 19 PM" src="https://github.com/user-attachments/assets/85fa6e7e-d6b6-4f70-937c-1c739ab02532">
 Ever wish you were always up-to-date on space news? Now, with our app, you can expect the latest and greatest updates surrounding space, rocket launches, and satellites delivered right to your phone. The app currently offers two tabs: *Reports*, which provides official ISS status reports updated daily, and *Articles*, which covers any other kind of interesting space-related events.
 
