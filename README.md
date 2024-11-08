@@ -9,7 +9,11 @@ Developed by Nolan Nguyen and Matthew Savitt.
 Credit to ChatGPT for helping Matt to create his idea of a shooting star background for both of our lists.
 
 ## About the API
-* This API provides articles and associated images for relevant space news, as well as official status reports from the International Space Station. The three primary sources we are able to pull information from consist of "reports", "articles", and "blogs". We felt that two of those sources were sufficient for the variety and functionality of this app. 
+* This API provides articles and associated images for relevant space news, as well as official status reports from the International Space Station. The three primary sources we are able to pull information from consist of "reports", "articles", and "blogs". We felt that two of those sources were sufficient for the variety and functionality of this app.
+
+## Roles
+* Nolan was primarily in charge of the app structure, API interaction, and UI/UX. 
+* Matthew provided support with ideation, and was responsible for the dynamic graphic background as well as the app icon.
 
 ## Credits/Documentation
 * Thanks to [SpaceFlight News](https://spaceflightnewsapi.net/) for the super cool API providing space news.
